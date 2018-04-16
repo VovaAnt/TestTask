@@ -1,4 +1,5 @@
 package SomeName;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import java.util.stream.Collectors;
 
 public class ResultPage {
 
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(ResultPage.class);
     WebDriver driver;
     public ResultPage(WebDriver driver ){
         this.driver = driver;
@@ -19,6 +21,7 @@ public class ResultPage {
     }
 
     public void searchDomainThroughPages(String domain) {
+        logger.info("It's 'searchDomainThroughPages' method here we searching our Domain, what we get from Test: value - '"+domain+"', on first 5 pages");
         boolean domainIsFound = false;
         selControls page = PageFactory.initElements(driver, selControls.class);
         for (int i = 0; i<=5; i++){
@@ -30,7 +33,12 @@ public class ResultPage {
                 else{page.Next.click();
             }
         }
-        Assert.assertTrue("Domain NotFound!!! ", domainIsFound);
+        try{
+            Assert.assertTrue("Domain NotFound!!! On pages 1-5! ", domainIsFound);
+        }catch (Exception e){
+            e.getLocalizedMessage();
+            logger.error(e);
+        }
     }
 
 }

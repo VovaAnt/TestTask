@@ -1,15 +1,9 @@
 package SomeName;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.TimeUnit;
 
-
-//import java.util.NoSuchElementException;
-//import java.util.concurrent.TimeUnit;
 
 public class HomePage  {
 
@@ -17,9 +11,11 @@ public class HomePage  {
     public HomePage(WebDriver driver ){
         this.driver = driver;
     }
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(HomePage.class);
 
 
     public ResultPage search (String word)throws InterruptedException {
+        logger.info("It's 'search' method here we searching our word what we get from Test: value - '"+word+"'");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         selControls page = PageFactory.initElements(driver, selControls.class);
         page.TextField.sendKeys(word);
@@ -27,14 +23,4 @@ public class HomePage  {
         return new ResultPage(driver);
     }
 
-
 }
-
-
-
-//TextField.sendKeys("automation");
-//TextField.submit();
-
-//TextField = driver.findElement(By.xpath(".//input[@class='gsfi']"));    //id='lst-ib']
-//Thread.sleep(5000);
-//        WebElement TextField = driver.findElement(By.xpath(".//input[@id='lst-ib']"));
