@@ -5,3 +5,6 @@
 2018-04-16 17:02:45 INFO  Tests:56 - Start second test: 'In this test we get 'Domain' from 'ConfigProperties.properties' file, which we wil check on existing in 1-5 pages in Google. '/n in our variable right now - https://www.testautomationday.com/
 2018-04-16 17:02:47 INFO  HomePage:18 - It's 'search' method here we searching our word what we get from Test: value - 'Automation'
 2018-04-16 17:02:49 INFO  ResultPage:24 - It's 'searchDomainThroughPages' method here we searching our Domain, what we get from Test: value - 'https://www.testautomationday.com/', on first 5 pages
+2018-04-16 17:14:29 INFO  Tests:23 - Here we set up the driver for: 'ChromeDriver'
+2018-04-16 17:14:41 INFO  Tests:46 - Start first test: 'In this test we get 'Word' from 'ConfigProperties.properties' file, which we wil serf in Google. 'in our variable right now - Automation
+2018-04-16 17:14:45 INFO  HomePage:18 - It's 'search' method here we searching our word what we get from Test: value - 'Automation'

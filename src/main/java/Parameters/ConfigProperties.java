@@ -11,7 +11,7 @@ public class ConfigProperties {
 
     static {
         try {
-            fileInputStream = new FileInputStream("E:\\1_EPAM_TestTask\\src\\main\\resources\\ConfigProperties.properties");
+            fileInputStream = new FileInputStream(".\\src\\main\\resources\\ConfigProperties.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
